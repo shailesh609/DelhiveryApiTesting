@@ -1,5 +1,7 @@
 package com.testingb2b.entity;
 
+import java.util.Map;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,7 +15,7 @@ public class DelhiveryApiLog {
 	
 	private String requestPayload;
 	private String orderId;
-	private Object headers;
+	private Map<String, String> headers;
 
 	public String getRequestPayload() {
 		return requestPayload;
@@ -23,7 +25,7 @@ public class DelhiveryApiLog {
 		this.requestPayload = requestPayload;
 	}
 
-	public void setHeaders(String headers) {
+	public void setHeaders(Map<String, String> headers) {
 		this.headers = headers;
 	}
 
@@ -31,7 +33,7 @@ public class DelhiveryApiLog {
 		return orderId;
 	}
 
-	public Object gethrderId() {
+	public Map<String, String> getHeaders() {
 		return headers;
 	}
 

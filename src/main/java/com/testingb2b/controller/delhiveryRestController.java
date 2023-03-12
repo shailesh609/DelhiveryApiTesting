@@ -1,12 +1,13 @@
 package com.testingb2b.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.testingb2b.service.DelhiveryService;
@@ -18,15 +19,15 @@ public class delhiveryRestController {
 	DelhiveryService delhiveryService;
 
 	@PostMapping("/label/{order}")
-	public void setDoc(HttpServletRequest request, @RequestBody String payload, @PathVariable String order) {
+	public void setDoc(@RequestHeader Map<String, String> headers, @RequestBody String payload, @PathVariable String order) {
 
-		delhiveryService.setPayload(request, payload, order);
+		delhiveryService.setPayload(headers, payload, order);
 	}
 
 	@GetMapping("/home")
-	public String getStatus() {
+	public String getStatus(@RequestHeader Map<String, String> headers) {
 
-		return "Hi Team, code is deployed successfully";
+		return "Hi Team, code is deployed successfully"+ headers.toString() ;
 	}
 
 }
