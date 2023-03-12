@@ -13,6 +13,7 @@ public class DelhiveryApiLog {
 	
 	private String requestPayload;
 	private String orderId;
+	private Object headers;
 
 	public String getRequestPayload() {
 		return requestPayload;
@@ -22,8 +23,16 @@ public class DelhiveryApiLog {
 		this.requestPayload = requestPayload;
 	}
 
+	public void setHeaders(String headers) {
+		this.headers = headers;
+	}
+
 	public String getOrderId() {
 		return orderId;
+	}
+
+	public Object gethrderId() {
+		return headers;
 	}
 
 	public void setOrderId(String orderId) {

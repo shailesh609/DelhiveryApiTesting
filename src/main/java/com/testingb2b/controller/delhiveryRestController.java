@@ -22,4 +22,10 @@ public class delhiveryRestController {
 		delhiveryService.setPayload(request, payload, order);
 	}
 
+	@GetMapping("/home")
+	public String getStatus() {
+
+		return "Hi Team, code is deployed successfully";
+	}
+
 }
